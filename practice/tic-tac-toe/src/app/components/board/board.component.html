@@ -1,0 +1,19 @@
+<div *ngIf = "winner" class = 'h-20 flex flex-col justify-end animate-bounce transition'>
+    <div class = 'bg-pink-700 h-10 flex justify-center items-center rounded shadow-lg'>
+        <h2 class = "text-xl flex justify-center text-white">Player {{winner}} won the game! 🎉</h2>
+    </div>
+</div>
+
+
+<div class="header flex justify-between items-center mb-10 mt-10">
+    <h1 class = 'text-xl text-slate-800'>Current Player: <span class = 'text-2xl font-bold' [ngClass]="getPlayer() === 'X' ? 'text-rose-800' : 'text-green-400'">{{getPlayer()}}</span></h1>
+    <button (click)="newGame()" class = 'h-10 w-fit p-2 text-white bg-amber-600 rounded shadow-md active:animate-ping'>Start New Game</button>    
+</div>
+
+
+
+
+<main>
+    <app-square *ngFor = "let val of squares; let i = index" [value] = "val" (click) = "makeMove(i)">
+    </app-square>
+</main>
