@@ -1,0 +1,25 @@
+<div class = 'flex mt-5 p-4 justify-between'>
+    <!-- photo -->
+    <div class = 'mr-10'>
+        <img src={{user.avatar_url}} alt="avatar" class = 'p-2 border border-gray-300 rounded'>
+    </div>
+    <!-- info column -->
+    <div class = 'flex flex-col border border-gray-300 rounded w-4/5 p-4'>
+        <!-- labels -->
+        <div class = 'flex justify-between items-center mb-5'>
+            <app-label [value] = user.public_repos label = 'Public Repos' bg = "bg-blue-700" color = 'text-white'></app-label>
+            <app-label [value] = user.public_gists label = 'Public Gists' bg = "bg-lime-500" color = 'text-white'></app-label>
+            <app-label [value] = user.followers label = 'Followers' bg = "bg-teal-500" color = 'text-white'></app-label>
+            <app-label [value] = user.following label = 'Following' bg = "bg-amber-400" color = 'text-white'></app-label>
+        </div>
+
+        <!-- user info -->
+        <div class = 'flex flex-col'>
+            <app-field *ngIf = "user.login" field = 'Username' [value] = user.login></app-field>
+            <app-field *ngIf = "user.location" field = 'Location' [value] = user.location></app-field>
+            <app-field *ngIf = "user.email" field = 'Email' [value] = user.email></app-field>
+            <app-field *ngIf = "user.blog" field = 'Blog/Website' [value] = user.blog></app-field>
+            <app-field *ngIf = "user.created_at" field = 'Member Since' [value]=user.created_at></app-field>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,5 @@
+<div class = 'flex flex-col justify-center items-center mb-20'>
+    <app-search class = 'w-full flex justify-center mt-10' (onSearch)="searchUsername($event)"></app-search>
+    <app-panel *ngIf = "user.name" class = 'mt-10' [user] = "user" [stats] = "stats"></app-panel>
+    <p *ngIf="error" class = 'mt-10 text-lg text-red-600'>Error finding user!</p>
+</div>

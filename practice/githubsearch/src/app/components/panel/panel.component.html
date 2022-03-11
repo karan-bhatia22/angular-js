@@ -1,0 +1,7 @@
+<div class = 'flex flex-col border border-gray-300 rounded'>
+    <header class = 'h-12 flex items-center border-b border-gray-300 bg-gray-100 text-2xl font-medium p-2'>{{user.name}}</header>
+    <!-- user info -->
+    <app-user-info [user] = "user"></app-user-info>
+    <!-- stats -->
+    <app-user-stats [stats] = "stats"></app-user-stats>
+</div>

@@ -1,0 +1,12 @@
+<div class = 'flex w-1/4 justify-between'>
+    <input type="text" placeholder="Search Username..." 
+        class = 'border border-gray-400 p-2 w-3/4 outline-none rounded-l border-r-0'
+        name = "search"
+        #search
+        (keyup)="onKeyUp(search.value)"
+    >
+    <button class = 'border border-gray-400 p-2 w-1/4 rounded-r bg-sky-600 text-white'
+    (click) = "onBtnClick()"
+    >
+    Search</button>
+</div>

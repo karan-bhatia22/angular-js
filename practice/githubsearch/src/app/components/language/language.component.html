@@ -1,0 +1,15 @@
+<div class = 'flex flex-col'>
+    <p *ngIf = "!language">Other</p>
+    <p *ngIf = "language">{{language}}</p>
+   
+    <div class = 'flex justify-between items-center'>
+         <!-- progress bar -->
+        <div class="w-full bg-gray-200 h-1 mr-4">
+            <div class="bg-blue-600 h-1" [ngStyle]="{'width': width}"></div>
+        </div>
+        <!-- text -->
+        <p *ngIf="percentage">{{percentage.toFixed(2)}}%</p>
+    </div>
+   
+
+</div>

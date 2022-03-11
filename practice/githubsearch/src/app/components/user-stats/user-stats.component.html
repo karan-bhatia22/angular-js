@@ -1,0 +1,15 @@
+<div class = 'flex mt-5 p-4 justify-between items-center'>
+    <!-- stats info -->
+    <div class = 'flex flex-col border border-gray-300 rounded p-3 w-1/2'>
+        <h1 class = 'mb-5 text-xl'>Github Stats</h1>
+        <app-stat stat = "Total Stars Earned " [value] = stats.stars_earned></app-stat>
+        <app-stat stat = "Total Issues " [value] = stats.total_issues></app-stat>
+        <app-stat stat = "Total Contributions " [value] = stats.contributed_to></app-stat>
+    </div>
+
+    <!-- languages info -->
+    <div class = 'flex flex-col border border-gray-300 rounded p-3 w-2/5'>
+        <h1 class = 'mb-5 text-xl'>Most Used Languages</h1>
+        <app-language *ngFor="let entry of stats.languages | keyvalue" [language] = entry.key [percentage]="entry.value"></app-language>
+    </div>
+</div>
