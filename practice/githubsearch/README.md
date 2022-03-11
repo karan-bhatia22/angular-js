@@ -1,5 +1,9 @@
 # Githubsearch
 
+Application to search for Github user stats
+
+Find the project [here](https://githubsearch-wine.vercel.app/)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
 
 ## Development server
