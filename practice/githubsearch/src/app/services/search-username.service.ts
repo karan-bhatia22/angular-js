@@ -37,7 +37,13 @@ export class SearchUsernameService {
         name: data.name,
         avatar_url: data.avatar_url,
         blog: data.blog,
-        created_at: data.created_at,
+        created_at: new Date(data.created_at)
+          .toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })
+          .toString(),
         followers: data.followers,
         following: data.following,
         location: data.location,

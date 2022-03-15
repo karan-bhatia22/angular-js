@@ -13,6 +13,7 @@ import { StatComponent } from './components/stat/stat.component';
 import { LanguageComponent } from './components/language/language.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
 import { UserStatsComponent } from './components/user-stats/user-stats.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { UserStatsComponent } from './components/user-stats/user-stats.component
     UserInfoComponent,
     UserStatsComponent,
   ],
-  imports: [BrowserModule, HttpClientModule],
+  imports: [BrowserModule, HttpClientModule, FontAwesomeModule],
   providers: [],
   bootstrap: [AppComponent],
 })
