@@ -42,8 +42,6 @@ export class BodyComponent implements OnInit {
 
       this.user = res_user;
       this.stats = res_stats;
-      console.log(this.user);
-      console.log(res_stats);
     } catch (err) {
       console.error(err);
       this.error = true;

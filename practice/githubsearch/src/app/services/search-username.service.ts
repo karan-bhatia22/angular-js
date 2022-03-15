@@ -10,6 +10,25 @@ export class SearchUsernameService {
 
   async getUser(userName: string): Promise<User> {
     try {
+      // search in cache first if found return the data else make a request to the api
+      if (localStorage.getItem(userName) !== null) {
+        const cachedUserObj = JSON.parse(localStorage[userName]);
+        const userData: User = {
+          name: cachedUserObj.name,
+          avatar_url: cachedUserObj.avatar_url,
+          blog: cachedUserObj.blog,
+          created_at: cachedUserObj.created_at,
+          followers: cachedUserObj.followers,
+          following: cachedUserObj.following,
+          location: cachedUserObj.location,
+          login: cachedUserObj.login,
+          public_gists: cachedUserObj.public_gists,
+          public_repos: cachedUserObj.public_repos,
+          email: cachedUserObj.email,
+        };
+        return userData;
+      }
+      console.log('Fetching username......');
       const res = await fetch(`${this.apiURL}/${userName}`).catch((error) => {
         return Promise.reject(error);
       });
@@ -27,6 +46,8 @@ export class SearchUsernameService {
         public_repos: data.public_repos,
         email: data.email,
       };
+      // cache the data after successful fetch
+      localStorage[userName] = JSON.stringify(userData);
       return userData;
     } catch (err) {
       return Promise.reject('Not found!');
@@ -35,6 +56,7 @@ export class SearchUsernameService {
 
   async getUserStats(userName: string): Promise<Stats> {
     try {
+      console.log('Fetching user stats......');
       const res = await fetch(`${this.apiURL}/${userName}/repos`).catch(
         (err) => {
           return Promise.reject(err);
@@ -81,7 +103,6 @@ export class SearchUsernameService {
         total_issues: issues,
         languages: languages,
       };
-
       return userStats;
     } catch (err) {
       return Promise.reject('Not Found');
