@@ -1,0 +1,23 @@
+<div class = 'flex justify-between items-center p-5 bg-white rounded shadow-lg'>
+    <!-- text -->
+    <div class = 'flex flex-col gap-y-5'>
+        <h2 class = 'text-xl'>Earnings</h2>
+        <div class = 'flex flex-col gap-y-3'>
+            <div class = 'flex flex-col'>
+                <p class = 'text-sm'>This Month</p>
+                <p>$4055.56</p>
+            </div>
+            <p class = 'text-xs font-light'>Terms and Conditions</p>
+        </div>
+    </div>
+
+    <!-- chart -->
+    <div>
+        <canvas baseChart
+        class="h-32"
+        [options]="donutChartOptions"
+        [data]="donutChartData"
+        [type]="donutChartType"
+        ></canvas>
+    </div>
+</div>

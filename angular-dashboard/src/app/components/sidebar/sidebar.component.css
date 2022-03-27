@@ -1,0 +1,8 @@
+fa-icon {
+  padding: 0.4rem;
+  border-radius: 0.4rem;
+}
+fa-icon:hover {
+  @apply bg-gray-200;
+  color: rgba(0, 0, 0, 0.6);
+}

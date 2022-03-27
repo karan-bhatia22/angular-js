@@ -1,0 +1,34 @@
+<div class = 'flex justify-between bg-white p-5 shadow-lg rounded h-full'>
+    <!-- chart -->
+    <div class = 'w-[58%] h-4/5'>
+        <canvas baseChart
+        [options]="barChartOptions"
+        [data] = "barChartData"
+        [type]="barChartType"
+        class = 'h-full'
+        >
+        </canvas>
+    </div>
+
+    <!-- text -->
+    <div class = 'flex flex-col items-center gap-y-4 w-2/5'>
+        <app-dropdown></app-dropdown>
+        <div class = 'flex flex-col gap-y-2'>
+            <p class = 'text-2xl font-bold text-slate-600'>$25,852</p>
+            <p class = 'text-sm font-light'><span class = 'font-bold'>Budget:</span>  56,800</p>
+        </div>
+        <!-- line chart -->
+        <div class = 'mb-12'>
+            <canvas baseChart
+            [options]="lineChartOptions"
+            [data] = "lineChartData"
+            [type] = "lineChartType"
+            class = 'h-24'
+            >
+            </canvas>
+        </div>
+        <app-button [label]="'Increase Budget'"></app-button>
+        
+        
+    </div>
+</div>

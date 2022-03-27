@@ -1,0 +1,16 @@
+<div class = 'flex flex-col p-5 bg-white rounded shadow-lg'>
+    <!-- text -->
+    <div class = 'flex flex-col'>
+        <p>Orders</p>
+        <p class= 'text-3xl font-bold text-slate-600'>2,76k</p>
+    </div>
+    <!-- chart -->
+    <div class="mt-5">
+        <canvas baseChart
+        [data]="barChartData"
+        [options]="barChartOptions"
+        [type]="barChartType"
+        >
+        </canvas>
+    </div>
+</div>
